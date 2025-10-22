@@ -11,7 +11,7 @@ environment = "dev"
 project_name = "terraform-cicd"
 
 # GitHub repository URL for CodeBuild source (required)
-github_repo_url = "https://github.com/mvhungrydev/docker-vcert.git"
+github_repo_url = "https://github.com/madamorr/docker-vcert.git"
 
 #
 # Name of the AWS Secrets Manager secret storing the GitHub Personal Access Token
