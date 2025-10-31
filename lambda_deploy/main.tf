@@ -7,7 +7,7 @@ terraform {
     }
   }
   backend "s3" {
-    bucket  = "mv-tf-pipeline-state"
+    bucket  = "mr-aws-trial-bkt"
     key     = "lambda_deploy/terraform.tfstate"
     region  = "us-east-1"
     encrypt = true
