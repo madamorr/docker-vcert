@@ -7,7 +7,7 @@ phases:
       - aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com
       - REPOSITORY_URI=$AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME
       - echo Repository URI is $REPOSITORY_URI
-      - IMAGE_TAG=0.0.5
+      - IMAGE_TAG=0.0.6
       - export TF_VAR_image_tag=$IMAGE_TAG
       - echo "Installing Terraform..."
       - export TF_VERSION=$(curl -s https://api.github.com/repos/hashicorp/terraform/releases/latest | grep tag_name | cut -d '"' -f 4 | sed 's/v//')
