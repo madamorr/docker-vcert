@@ -291,14 +291,13 @@ def split_blocks(pem_text:str):
     
 if __name__ == "__main__":
     # Get api secret from secrets manager
-    #api_secrets = fetch_aws_secret("pki-tppl-api-key", region_name="us-east-1")
-    #if not api_secrets:
-    ##    logger.error("Failed to retrieve API secrets. Exiting.")
-    #    exit(1)
+    api_secrets = fetch_aws_secret("pki-tppl-api-key", region_name="us-east-1")
+    if not api_secrets:
+        logger.error("Failed to retrieve API secrets. Exiting.")
+        exit(1)
 
     # lambda handler would pass these as parameters in production
-    #api_token = api_secrets["tppl-api-key"]
-    api_token = "5a43c793-35ea-4731-ad4a-6661c4e661ac"
+    api_token = api_secrets["tppl-api-key"]
     headers = {"tppl-api-key": f"{api_token}", "accept": "application/json"}
     api_base_url = "https://api.venafi.cloud"
     minutes = 6000
